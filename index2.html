@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #miPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            tabindex: -1;
+        }
+    </style>
+</head>
+<body>
+
+<button id="btn" onclick="mostrarPopup()">Mostrar Pop-up</button>
+
+<div id="overlay" onclick="cerrarPopup()" onkeydown="navegarTeclado(event)"></div>
+
+<div id="miPopup" tabindex="0" onkeydown="navegarTeclado(event)">
+    <input type="text" id="elemento1" tabindex="0">
+    <input type="text" id="elemento2" tabindex="0">
+    <button id="elemento3" tabindex="0">Botón</button>
+    <button onclick="cerrarPopup()">Cerrar</button>
+</div>
+
+<script src="index2.js"></script>
+</body>
+</html>
